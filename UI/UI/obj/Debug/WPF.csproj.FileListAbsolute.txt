@@ -1,0 +1,6 @@
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\WPF.csprojResolveAssemblyReference.cache
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\NannyWPF.g.cs
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI_MarkupCompile.cache
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI_MarkupCompile.lref
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI.exe
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI.pdb

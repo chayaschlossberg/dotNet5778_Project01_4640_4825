@@ -1,0 +1,11 @@
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI.csproj.CoreCompileInputs.cache
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\bin\Debug\UI.exe.config
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\bin\Debug\UI.exe
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\bin\Debug\UI.pdb
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\bin\Debug\BE.dll
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\bin\Debug\BL.dll
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\bin\Debug\BE.pdb
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\bin\Debug\BL.pdb
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI.csprojResolveAssemblyReference.cache
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI.exe
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\UI\obj\Debug\UI.pdb

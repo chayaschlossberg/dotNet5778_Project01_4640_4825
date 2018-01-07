@@ -1,0 +1,12 @@
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.csprojResolveAssemblyReference.cache
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\BE\bin\Debug\BE.dll
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\BE\bin\Debug\BE.pdb
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.dll
+D:\משתמש לא למחוק\Desktop\לימודים\c#\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.pdb
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\BE\bin\Debug\BE.dll
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\BE\bin\Debug\BE.pdb
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.csprojResolveAssemblyReference.cache
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.dll
+D:\הורדות\C#\dotNet5778_Project01_4640_4825\dotNet5778_Project01_4640_4825\UI\BE\obj\Debug\BE.pdb
