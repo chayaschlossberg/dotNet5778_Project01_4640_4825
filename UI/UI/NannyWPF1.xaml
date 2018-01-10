@@ -1,0 +1,1044 @@
+﻿<UserControl x:Class="UI.NannyWPF"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:UI"
+             mc:Ignorable="d" d:DesignWidth="600" BorderThickness="1" BorderBrush="Black" Height="500">
+    <Grid Margin="0,0,0,-46">
+        <TabControl Name="TabControl" TabStripPlacement="Top" Background="WhiteSmoke" SelectionChanged="Tab_SelectionChanged" Margin="0,-1,0,1" >
+            <TabControl.Items>
+                <TabItem Name="AddTab" Header="Add" Background="Pink"  Margin="0,0,-94,-24" FontWeight="Bold">
+                    <Grid Margin="0,18,0,6">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="439*"/>
+                            <ColumnDefinition Width="153*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition Height="0*"/>
+                        </Grid.RowDefinitions>
+                        <TextBlock Name="nannyfirstname" Text=" Enter Name"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+                        <TextBox Name="EnterName" Background="Transparent" Text="{Binding Path=NannyFirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="10,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <Label Content="Last Name*" HorizontalAlignment="Left" Height="32" Margin="7,88,0,0" VerticalAlignment="Top" Width="137"/>
+                        <TextBlock Name="nannylastname" Text=" Enter Last Name"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="11,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+                        <TextBox Name="lastname" Background="Transparent" Text="{Binding Path=NannyLastName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="11,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" GotFocus="Min_GotFocus" LostFocus="Min_LostFocus" />
+                        <Label Content="Name*" HorizontalAlignment="Left" Height="25" Margin="7,49,0,0" VerticalAlignment="Top" Width="93"/>
+                        <Label Content=" id" Height="32" Margin="7,124,263.889,0" VerticalAlignment="Top"/>
+                        <TextBlock Name="NannyId" Text=" Enter ID"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="11,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206"/>
+                        <TextBox Name="nannyid" Background="Transparent" Text="{Binding Path=NannyId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="11,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" TextChanged="nannyid_TextChanged" />
+                        <ComboBox Name="day" Margin="11,186,0,0" SelectedValue="{Binding CategoryType}" SelectionChanged="U_Sub_SelectionChanged" Width="43" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                            <ComboBoxItem Content="6"/>
+                            <ComboBoxItem Content="7"/>
+                            <ComboBoxItem Content="8"/>
+                            <ComboBoxItem Content="9"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                            <ComboBoxItem Content="19"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="21"/>
+                            <ComboBoxItem Content="22"/>
+                            <ComboBoxItem Content="23"/>
+                            <ComboBoxItem Content="24"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="26"/>
+                            <ComboBoxItem Content="27"/>
+                            <ComboBoxItem Content="28"/>
+                            <ComboBoxItem Content="29"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="31"/>
+                        </ComboBox>
+                        <ComboBox Name="month" Margin="57,186,0,0" SelectedValue="{Binding CategoryType}" SelectionChanged="U_Sub_SelectionChanged" Width="43" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                            <ComboBoxItem Content="6"/>
+                            <ComboBoxItem Content="7"/>
+                            <ComboBoxItem Content="8"/>
+                            <ComboBoxItem Content="9"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                        </ComboBox>
+                        <ComboBox Name="year" Margin="104,186,0,0" SelectedValue="{Binding CategoryType}" SelectionChanged="U_Sub_SelectionChanged" Width="71" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="2000"/>
+                            <ComboBoxItem Content="1999"/>
+                            <ComboBoxItem Content="1998"/>
+                            <ComboBoxItem Content="1997"/>
+                            <ComboBoxItem Content="1996"/>
+                            <ComboBoxItem Content="1995"/>
+                            <ComboBoxItem Content="1994"/>
+                            <ComboBoxItem Content="1993"/>
+                            <ComboBoxItem Content="1992"/>
+                            <ComboBoxItem Content="1991"/>
+                            <ComboBoxItem Content="1990"/>
+                            <ComboBoxItem Content="1989"/>
+                            <ComboBoxItem Content="1988"/>
+                            <ComboBoxItem Content="1987"/>
+                            <ComboBoxItem Content="1986"/>
+                            <ComboBoxItem Content="1985"/>
+                            <ComboBoxItem Content="1984"/>
+                            <ComboBoxItem Content="1983"/>
+                            <ComboBoxItem Content="1982"/>
+                            <ComboBoxItem Content="1981"/>
+                            <ComboBoxItem Content="1980"/>
+                            <ComboBoxItem Content="1979"/>
+                            <ComboBoxItem Content="1978"/>
+                            <ComboBoxItem Content="1977"/>
+                            <ComboBoxItem Content="1976"/>
+                            <ComboBoxItem Content="1975"/>
+                            <ComboBoxItem Content="1974"/>
+                            <ComboBoxItem Content="1973"/>
+                            <ComboBoxItem Content="1972"/>
+                            <ComboBoxItem Content="1971"/>
+                            <ComboBoxItem Content="1970"/>
+                            <ComboBoxItem Content="1969"/>
+                            <ComboBoxItem Content="1968"/>
+                        </ComboBox>
+                        <Button Name="Add" Content="Add" HorizontalAlignment="Left" Margin="429,415,0,0" VerticalAlignment="Top" Width="127" FontFamily="Georgia" Background="Pink" Foreground="Black" FontSize="16" Height="49" Click="Add_Click" FontWeight="Bold" Grid.ColumnSpan="2"/>
+                        <Label Content="Birth Date" HorizontalAlignment="Left" Margin="6,163,0,0" VerticalAlignment="Top" Height="25" Width="142"/>
+                        <ComboBox Name="PhoneNomber" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="51" Margin="11,0,0,241" Height="22">
+                            <ComboBoxItem Content="02"/>
+                            <ComboBoxItem Content="03"/>
+                            <ComboBoxItem Content="04"/>
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="077"/>
+                            <ComboBoxItem Content="073"/>
+                        </ComboBox>
+                        <Label Content=" Enter phone number" HorizontalAlignment="Left" Margin="3,200,0,0" VerticalAlignment="Top" Height="25" Width="142"/>
+                        <TextBlock Name="NannyPhoneNumber" Text=" Enter phone number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="67,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+                        <TextBox Name="nannyphonenumber" Background="Transparent" Text="{Binding Path=NannyPhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="22" Margin="66,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" LostFocus="Max_LostFocus" GotFocus="Max_GotFocus" TextChanged="nannyid_TextChanged" />
+                        <Label Content=" Enter mobile number" HorizontalAlignment="Left" Margin="3,242,0,0" VerticalAlignment="Top" Height="25" Width="142"/>
+                        <ComboBox Name="MoileNomber" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="51" Margin="11,0,0,202" Height="22">
+                            <ComboBoxItem Content="+972"/>
+                        </ComboBox>
+                        <TextBlock Name="NannyMobileNumber" Text=" Enter mobile number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="67,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149"/>
+                        <TextBox Name="nannymobilenumber" Background="Transparent" Text="{Binding Path=NannyMobileNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="22" Margin="66,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" LostFocus="Max_LostFocus" GotFocus="Max_GotFocus" TextChanged="nannyid_TextChanged" />
+                        <Label Content="Address" HorizontalAlignment="Left" Height="25" Margin="7,284,0,0" VerticalAlignment="Top" Width="57"/>
+                        <TextBlock Name="street" Text=" street"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="12,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+                        <TextBox Name="EnterStreet" Background="Transparent" Text="{Binding Path=NannyStreet, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="12,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <TextBlock Name="city" Text=" city"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="95,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82"/>
+                        <TextBox Name="EnterCity" Background="Transparent" Text="{Binding Path=NannyCity, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="96,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <ComboBox Name="country" Margin="184,306,0,0" SelectedValue="{Binding NannyTown}" SelectionChanged="U_Sub_SelectionChanged" Width="82" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="Israel"/>
+                        </ComboBox>
+                        <CheckBox Content="Elevator" IsChecked="{Binding Path=NannyHasElevator, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="328,79,0,0" VerticalAlignment="Top" Width="86" Height="16"/>
+                        <Label Content="Floor" HorizontalAlignment="Left" Height="25" Margin="226,52,0,0" VerticalAlignment="Top" Width="57"/>
+                        <ComboBox Name="whichFloor" Margin="230,74,0,0" SelectedValue="{Binding NannyWhichFloor}" SelectionChanged="U_Sub_SelectionChanged" Width="82" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="-4"/>
+                            <ComboBoxItem Content="-3"/>
+                            <ComboBoxItem Content="-2"/>
+                            <ComboBoxItem Content="-1"/>
+                            <ComboBoxItem Content="0"/>
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                        </ComboBox>
+                        <Label Content="Experience" HorizontalAlignment="Left" Height="25" Margin="226,90,0,0" VerticalAlignment="Top" Width="77"/>
+                        <TextBlock Name="yearsOfExperience" Text=" years Of Experience"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="230,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126"/>
+                        <TextBox Name="yersOfExperience" Background="Transparent" Text="{Binding Path=NannyYearsOfExperience, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="229,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <Label Content="Child Range Age" HorizontalAlignment="Left" Height="25" Margin="226,125,0,0" VerticalAlignment="Top" Width="77"/>
+                        <TextBlock Name="nannyChildMinAge" Text=" Min "  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="233,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+                        <TextBox Name="ChildMinAge" Background="Transparent" Text="{Binding Path=NannyMinChildrenAge, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="230,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <TextBlock Name="nannyChildMaxAge" Text=" Max "  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="321,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80"/>
+                        <TextBox Name="ChildMaxAge" Background="Transparent" Text="{Binding Path=NannyMaxChildrenAge, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="319,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <Label Content="Max Children" HorizontalAlignment="Left" Height="25" Margin="228,163,0,0" VerticalAlignment="Top" Width="123"/>
+                        <TextBlock Name="MaxChildren" Text=" Amount "  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="232,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81"/>
+                        <TextBox Name="maxchildren" Background="Transparent" Text="{Binding Path=NannyMaxAmountOfChildren, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="231,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <CheckBox Content="pay by hour" IsChecked="{Binding Path=NannyIsPayByTheHour, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="328,228,0,0" VerticalAlignment="Top" Width="91" Height="15"/>
+                        <Label Content="Salary Per Hour" HorizontalAlignment="Left" Height="25" Margin="227,203,0,0" VerticalAlignment="Top" Width="123"/>
+                        <TextBlock Name="SalaryPerHour" Text=" ₪"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="229,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"/>
+                        <TextBox Name="salaryperhour" Background="Transparent" Text="{Binding Path=NannySalaryPerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="229,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <Label Content="Salary Per Month" HorizontalAlignment="Left" Height="25" Margin="224,242,0,0" VerticalAlignment="Top" Width="123"/>
+                        <TextBlock Name="SalaryPerMonth" Text=" ₪"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="229,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91"/>
+                        <TextBox Name="salarypermonth" Background="Transparent" Text="{Binding Path=NannySalaryPerMonth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="228,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" />
+                        <Label Content="Hours" HorizontalAlignment="Left" Height="25" Margin="7,325,0,0" VerticalAlignment="Top" Width="57"/>
+                        <CheckBox Content="TMT" IsChecked="{Binding Path=NannyVacationDays, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="328,310,0,0" VerticalAlignment="Top" Height="16" Width="66"/>
+                        <CheckBox Content="Sunday" IsChecked="{Binding Path=NannyWorkDays[0], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="37,351,0,0" VerticalAlignment="Top" Height="16" Width="61"/>
+                        <ComboBox Name="SunHours" Margin="13,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="SunMinutes" Margin="72,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="SunHours1" Margin="13,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="SunMinutes1" Margin="72,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Monday" IsChecked="{Binding Path=NannyWorkDays[1], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="163,351,0,0" VerticalAlignment="Top" Height="16" Width="67"/>
+                        <ComboBox Name="MonHours" Margin="141,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="MonMinutes" Margin="200,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="MonHours1" Margin="141,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="MonMinutes1" Margin="200,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Tuesday" IsChecked="{Binding Path=NannyWorkDays[2], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="293,351,0,0" VerticalAlignment="Top" Height="16" Width="66"/>
+                        <ComboBox Name="TueHours" Margin="269,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="TueMinutes" Margin="328,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="TueHours1" Margin="269,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="TueMinutes1" Margin="328,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Wednesday" IsChecked="{Binding Path=NannyWorkDays[3], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="26,424,0,0" VerticalAlignment="Top" Height="15" Width="85"/>
+                        <ComboBox Name="WedHours" Margin="13,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="WedMinutes" Margin="72,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="WedHours1" Margin="13,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="WedMinutes1" Margin="72,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Thursday" IsChecked="{Binding Path=NannyWorkDays[4], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="165,424,0,0" VerticalAlignment="Top" Height="15" Width="73"/>
+                        <ComboBox Name="ThuHours" Margin="141,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="ThuMinutes" Margin="200,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="ThuHours1" Margin="141,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="ThuMinutes1" Margin="200,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Friday" IsChecked="{Binding Path=NannyWorkDays[5], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="293,424,0,0" VerticalAlignment="Top" Height="15" Width="55"/>
+                        <ComboBox Name="FriHours" Margin="269,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                        </ComboBox>
+                        <ComboBox Name="FriMinutes" Margin="328,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="FriHours1" Margin="269,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="FriMinutes1" Margin="328,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <Label Content="Bank Name" HorizontalAlignment="Left" Height="25" Margin="429,55,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBlock Name="BankName" Text=" Enter Bank Name"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="433,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBox Name="bankname" Background="Transparent" Text="{Binding Path=NannyBankName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="433,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" />
+                        <Label Content="Bank Number" HorizontalAlignment="Left" Height="25" Margin="429,91,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBlock Name="BankNumber" Text=" Enter Bank Number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="433,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBox Name="banknumber" Background="Transparent" Text="{Binding Path=NannyAccountNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="433,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" />
+                        <Label Content="Bank Branch" HorizontalAlignment="Left" Height="25" Margin="429,126,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBlock Name="BankBranch" Text=" Enter Bank Branch"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="433,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBox Name="bankbranch" Background="Transparent" Text="{Binding Path=NannyBranchNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="433,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" />
+                        <Label Content="Account Number" HorizontalAlignment="Left" Height="25" Margin="429,160,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBlock Name="AccountNumber" Text=" Enter Account Number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="433,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBox Name="accountnumber" Background="Transparent" Text="{Binding Path=NannyAccountNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="433,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" />
+                        <Label Content="Renarks" HorizontalAlignment="Left" Height="25" Margin="433,232,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2"/>
+                        <TextBlock Name="Recommendations" Text=" Enter Nanny Renarks"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="91" Margin="433,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" Grid.ColumnSpan="2"/>
+                        <TextBox Name="recommendations" Background="Transparent" Text="{Binding Path=NannyRemarkes, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="93" Margin="433,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="137" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" />
+                    </Grid>
+                </TabItem>
+                <TabItem Name="UpdateTab" Header="Update" Background="Pink" Margin="93,0,-198,-24" FontWeight="Bold">
+                    <Grid Name="UpdateGrid">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="91.333"/>
+                            <ColumnDefinition Width="27.333"/>
+                            <ColumnDefinition Width="0*"/>
+                            <ColumnDefinition Width="11*"/>
+                            <ColumnDefinition Width="11*"/>
+                            <ColumnDefinition Width="361*"/>
+                            <ColumnDefinition Width="90*"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Name="nannyfirstnameu" Text=" Enter Name"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="10,75,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Grid.ColumnSpan="6"/>
+                        <TextBox Name="EnterNameu" Background="Transparent" Text="{Binding Path=NannyFirstName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="10,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="6" />
+                        <Label Content="Last Name*" HorizontalAlignment="Left" Height="32" Margin="7,88,0,0" VerticalAlignment="Top" Width="137" Grid.ColumnSpan="6"/>
+                        <TextBlock Name="nannylastnameu" Text=" Enter Last Name"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="11,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Grid.ColumnSpan="6"/>
+                        <TextBox Name="lastnameu" Background="Transparent" Text="{Binding Path=NannyLastName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="11,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" GotFocus="Min_GotFocus" LostFocus="Min_LostFocus" Grid.ColumnSpan="6" />
+                        <Label Content="Name*" HorizontalAlignment="Left" Height="25" Margin="7,49,0,0" VerticalAlignment="Top" Width="93" Grid.ColumnSpan="2"/>
+                        <Label Content="nanny id" Height="32" Margin="7,124,39.333,0" VerticalAlignment="Top"/>
+                        <TextBlock Name="NannyIdu" Text=" Enter ID"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="11,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" Grid.ColumnSpan="6"/>
+                        <TextBox Name="nannyidu" Background="Transparent" Text="{Binding Path=NannyId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="11,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" TextChanged="nannyid_TextChanged" Grid.ColumnSpan="6" />
+                        <ComboBox Name="dayu" Margin="11,186,0,0" SelectedValue="{Binding CategoryType}" SelectionChanged="U_Sub_SelectionChanged" Width="43" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                            <ComboBoxItem Content="6"/>
+                            <ComboBoxItem Content="7"/>
+                            <ComboBoxItem Content="8"/>
+                            <ComboBoxItem Content="9"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                            <ComboBoxItem Content="19"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="21"/>
+                            <ComboBoxItem Content="22"/>
+                            <ComboBoxItem Content="23"/>
+                            <ComboBoxItem Content="24"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="26"/>
+                            <ComboBoxItem Content="27"/>
+                            <ComboBoxItem Content="28"/>
+                            <ComboBoxItem Content="29"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="31"/>
+                        </ComboBox>
+                        <ComboBox Name="monthu" Margin="57,186,0,0" SelectedValue="{Binding CategoryType}" SelectionChanged="U_Sub_SelectionChanged" Width="43" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="2">
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                            <ComboBoxItem Content="6"/>
+                            <ComboBoxItem Content="7"/>
+                            <ComboBoxItem Content="8"/>
+                            <ComboBoxItem Content="9"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                        </ComboBox>
+                        <ComboBox Name="yearu" Margin="9.334,186,0,0" SelectedValue="{Binding CategoryType}" SelectionChanged="U_Sub_SelectionChanged" Width="71" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="4" Grid.Column="2">
+                            <ComboBoxItem Content="2000"/>
+                            <ComboBoxItem Content="1999"/>
+                            <ComboBoxItem Content="1998"/>
+                            <ComboBoxItem Content="1997"/>
+                            <ComboBoxItem Content="1996"/>
+                            <ComboBoxItem Content="1995"/>
+                            <ComboBoxItem Content="1994"/>
+                            <ComboBoxItem Content="1993"/>
+                            <ComboBoxItem Content="1992"/>
+                            <ComboBoxItem Content="1991"/>
+                            <ComboBoxItem Content="1990"/>
+                            <ComboBoxItem Content="1989"/>
+                            <ComboBoxItem Content="1988"/>
+                            <ComboBoxItem Content="1987"/>
+                            <ComboBoxItem Content="1986"/>
+                            <ComboBoxItem Content="1985"/>
+                            <ComboBoxItem Content="1984"/>
+                            <ComboBoxItem Content="1983"/>
+                            <ComboBoxItem Content="1982"/>
+                            <ComboBoxItem Content="1981"/>
+                            <ComboBoxItem Content="1980"/>
+                            <ComboBoxItem Content="1979"/>
+                            <ComboBoxItem Content="1978"/>
+                            <ComboBoxItem Content="1977"/>
+                            <ComboBoxItem Content="1976"/>
+                            <ComboBoxItem Content="1975"/>
+                            <ComboBoxItem Content="1974"/>
+                            <ComboBoxItem Content="1973"/>
+                            <ComboBoxItem Content="1972"/>
+                            <ComboBoxItem Content="1971"/>
+                            <ComboBoxItem Content="1970"/>
+                            <ComboBoxItem Content="1969"/>
+                            <ComboBoxItem Content="1968"/>
+                        </ComboBox>
+                        <Button Name="update" Content="update" HorizontalAlignment="Left" Margin="287.334,415,0,0" VerticalAlignment="Top" Width="127" FontFamily="Georgia" Background="Pink" Foreground="Black" FontSize="16" Height="49" Click="Add_Click" FontWeight="Bold" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <Label Content="Birth Date" HorizontalAlignment="Left" Margin="6,163,0,0" VerticalAlignment="Top" Height="25" Width="142" Grid.ColumnSpan="6"/>
+                        <ComboBox Name="PhoneNomberu" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="51" Margin="11,0,0,264" Height="22">
+                            <ComboBoxItem Content="02"/>
+                            <ComboBoxItem Content="03"/>
+                            <ComboBoxItem Content="04"/>
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="077"/>
+                            <ComboBoxItem Content="073"/>
+                        </ComboBox>
+                        <Label Content=" Enter phone number" HorizontalAlignment="Left" Margin="3,200,0,0" VerticalAlignment="Top" Height="25" Width="142" Grid.ColumnSpan="6"/>
+                        <TextBlock Name="NannyPhoneNumberu" Text=" Enter phone number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="67,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Grid.ColumnSpan="6"/>
+                        <TextBox Name="nannyphonenumberu" Background="Transparent" Text="{Binding Path=NannyPhoneNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="22" Margin="66,225,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" LostFocus="Max_LostFocus" GotFocus="Max_GotFocus" TextChanged="nannyid_TextChanged" Grid.ColumnSpan="6" />
+                        <Label Content=" Enter mobile number" HorizontalAlignment="Left" Margin="3,242,0,0" VerticalAlignment="Top" Height="25" Width="142" Grid.ColumnSpan="6"/>
+                        <ComboBox Name="MobileNomberu" HorizontalAlignment="Left" VerticalAlignment="Bottom" Width="51" Margin="11,0,0,228" Height="22">
+                            <ComboBoxItem Content="+972"/>
+                        </ComboBox>
+                        <TextBlock Name="NannyMobileNumberu" Text=" Enter mobile number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="67,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="149" Grid.ColumnSpan="6"/>
+                        <TextBox Name="nannymobilenumberu" Background="Transparent" Text="{Binding Path=NannyMobileNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="22" Margin="66,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" LostFocus="Max_LostFocus" GotFocus="Max_GotFocus" TextChanged="nannyid_TextChanged" Grid.ColumnSpan="6" />
+                        <Label Content="Address" HorizontalAlignment="Left" Height="25" Margin="11,280,0,0" VerticalAlignment="Top" Width="57"/>
+                        <TextBlock Name="streetu" Text=" street"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="12,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Grid.ColumnSpan="2"/>
+                        <TextBox Name="EnterStreetu" Background="Transparent" Text="{Binding Path=NannyStreet, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="12,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" />
+                        <TextBlock Name="cityu" Text=" city"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="0.334,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" Grid.ColumnSpan="4" Grid.Column="2"/>
+                        <TextBox Name="EnterCityu" Background="Transparent" Text="{Binding Path=NannyCity, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="1.334,306,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="4" Grid.Column="2" />
+                        <ComboBox Name="countryu" Margin="43.334,306,0,0" SelectedValue="{Binding NannyTown}" SelectionChanged="U_Sub_SelectionChanged" Width="82" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="Israel"/>
+                        </ComboBox>
+                        <CheckBox Content="Elevator" IsChecked="{Binding Path=NannyHasElevator, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="187.334,79,0,0" VerticalAlignment="Top" Width="86" Height="16" Grid.Column="5"/>
+                        <Label Content="Floor" HorizontalAlignment="Left" Height="25" Margin="85.334,52,0,0" VerticalAlignment="Top" Width="57" Grid.Column="5"/>
+                        <ComboBox Name="whichFlooru" Margin="89.334,74,0,0" SelectedValue="{Binding NannyWhichFloor}" SelectionChanged="U_Sub_SelectionChanged" Width="82" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="-4"/>
+                            <ComboBoxItem Content="-3"/>
+                            <ComboBoxItem Content="-2"/>
+                            <ComboBoxItem Content="-1"/>
+                            <ComboBoxItem Content="0"/>
+                            <ComboBoxItem Content="1"/>
+                            <ComboBoxItem Content="2"/>
+                            <ComboBoxItem Content="3"/>
+                            <ComboBoxItem Content="4"/>
+                            <ComboBoxItem Content="5"/>
+                        </ComboBox>
+                        <Label Content="Experience" HorizontalAlignment="Left" Height="25" Margin="85.334,90,0,0" VerticalAlignment="Top" Width="77" Grid.Column="5"/>
+                        <TextBlock Name="yearsOfExperienceu" Text=" years Of Experience"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="89.334,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="126" Grid.Column="5"/>
+                        <TextBox Name="yersOfExperienceu" Background="Transparent" Text="{Binding Path=NannyYearsOfExperience, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="88.334,110,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="127" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.Column="5" />
+                        <Label Content="Child Range Age" HorizontalAlignment="Left" Height="25" Margin="85.334,125,0,0" VerticalAlignment="Top" Width="77" Grid.Column="5"/>
+                        <TextBlock Name="nannyChildMinAgeu" Text=" Min "  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="92.334,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Grid.Column="5"/>
+                        <TextBox Name="ChildMinAgeu" Background="Transparent" Text="{Binding Path=NannyMinChildrenAge, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="89.334,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.Column="5" />
+                        <TextBlock Name="nannyChildMaxAgeu" Text=" Max "  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="180.334,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="80" Grid.Column="5"/>
+                        <TextBox Name="ChildMaxAgeu" Background="Transparent" Text="{Binding Path=NannyMaxChildrenAge, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="178.334,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.Column="5" />
+                        <Label Content="Max Children" HorizontalAlignment="Left" Height="25" Margin="87.334,163,0,0" VerticalAlignment="Top" Width="123" Grid.Column="5"/>
+                        <TextBlock Name="MaxChildrenu" Text=" Amount "  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="91.334,187,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" Grid.Column="5"/>
+                        <TextBox Name="maxchildrenu" Background="Transparent" Text="{Binding Path=NannyMaxAmountOfChildren, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="90.334,188,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="82" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.Column="5" />
+                        <CheckBox Content="pay by hour" IsChecked="{Binding Path=NannyIsPayByTheHour, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="187.334,228,0,0" VerticalAlignment="Top" Width="91" Height="15" Grid.Column="5"/>
+                        <Label Content="Salary Per Hour" HorizontalAlignment="Left" Height="25" Margin="86.334,203,0,0" VerticalAlignment="Top" Width="123" Grid.Column="5"/>
+                        <TextBlock Name="SalaryPerHouru" Text=" ₪"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="88.334,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Grid.Column="5"/>
+                        <TextBox Name="salaryperhouru" Background="Transparent" Text="{Binding Path=NannySalaryPerHour, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="88.334,226,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.Column="5" />
+                        <Label Content="Salary Per Month" HorizontalAlignment="Left" Height="25" Margin="83.334,242,0,0" VerticalAlignment="Top" Width="123" Grid.Column="5"/>
+                        <TextBlock Name="SalaryPerMonthu" Text=" ₪"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="88.334,264,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="91" Grid.Column="5"/>
+                        <TextBox Name="salarypermonthu" Background="Transparent" Text="{Binding Path=NannySalaryPerMonth, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="87.334,265,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="92" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.Column="5" />
+                        <Label Content="Hours" HorizontalAlignment="Left" Height="25" Margin="7,325,0,0" VerticalAlignment="Top" Width="57"/>
+                        <CheckBox Content="TMT" IsChecked="{Binding Path=NannyVacationDays, Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="187.334,310,0,0" VerticalAlignment="Top" Height="16" Width="66" Grid.Column="5"/>
+                        <CheckBox Content="Sunday" IsChecked="{Binding Path=NannyWorkDays[0], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="37,351,0,0" VerticalAlignment="Top" Height="16" Width="61" Grid.ColumnSpan="2"/>
+                        <ComboBox Name="SunHoursu" Margin="13,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="SunMinutesu" Margin="72,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="4">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="SunHours1u" Margin="13,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="SunMinutes1u" Margin="72,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][0]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="4">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Monday" IsChecked="{Binding Path=NannyWorkDays[1], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="22.334,351,0,0" VerticalAlignment="Top" Height="16" Width="67" Grid.Column="5"/>
+                        <ComboBox Name="MonHoursu" Margin="0.334,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="MonMinutesu" Margin="59.334,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="MonHours1u" Margin="0.334,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="MonMinutes1u" Margin="59.334,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][1]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Tuesday" IsChecked="{Binding Path=NannyWorkDays[2], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="152.334,351,0,0" VerticalAlignment="Top" Height="16" Width="66" Grid.Column="5"/>
+                        <ComboBox Name="TueHoursu" Margin="128.334,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="TueMinutesu" Margin="187.334,371,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="TueHours1u" Margin="128.334,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="TueMinutes1u" Margin="187.334,395,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][2]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Wednesday" IsChecked="{Binding Path=NannyWorkDays[3], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="26,424,0,0" VerticalAlignment="Top" Height="15" Width="85" Grid.ColumnSpan="2"/>
+                        <ComboBox Name="WedHoursu" Margin="13,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="WedMinutesu" Margin="72,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="4">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="WedHours1u" Margin="13,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="WedMinutes1u" Margin="72,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][3]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.ColumnSpan="4">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Thursday" IsChecked="{Binding Path=NannyWorkDays[4], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="24.334,424,0,0" VerticalAlignment="Top" Height="15" Width="73" Grid.Column="5"/>
+                        <ComboBox Name="ThuHoursu" Margin="0.334,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="ThuMinutesu" Margin="59.334,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="ThuHours1u" Margin="0.334,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="ThuMinutes1u" Margin="59.334,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][4]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <CheckBox Content="Friday" IsChecked="{Binding Path=NannyWorkDays[5], Mode=TwoWay, NotifyOnValidationError=True, ValidatesOnExceptions=True}" HorizontalAlignment="Left" Margin="152.334,424,0,0" VerticalAlignment="Top" Height="15" Width="55" Grid.Column="5"/>
+                        <ComboBox Name="FriHoursu" Margin="128.334,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[0][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                        </ComboBox>
+                        <ComboBox Name="FriMinutesu" Margin="187.334,444,0,0" SelectedValue="{Binding NannyHoursAtWeek[1][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <ComboBox Name="FriHours1u" Margin="128.334,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[2][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="51" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="08"/>
+                            <ComboBoxItem Content="09"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="11"/>
+                            <ComboBoxItem Content="12"/>
+                            <ComboBoxItem Content="13"/>
+                            <ComboBoxItem Content="14"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="16"/>
+                            <ComboBoxItem Content="17"/>
+                            <ComboBoxItem Content="18"/>
+                        </ComboBox>
+                        <ComboBox Name="FriMinutes1u" Margin="187.334,468,0,0" SelectedValue="{Binding NannyHoursAtWeek[3][5]}" SelectionChanged="U_Sub_SelectionChanged" Width="52" Height="20" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="5">
+                            <ComboBoxItem Content="05"/>
+                            <ComboBoxItem Content="10"/>
+                            <ComboBoxItem Content="15"/>
+                            <ComboBoxItem Content="20"/>
+                            <ComboBoxItem Content="25"/>
+                            <ComboBoxItem Content="30"/>
+                            <ComboBoxItem Content="35"/>
+                            <ComboBoxItem Content="40"/>
+                            <ComboBoxItem Content="45"/>
+                            <ComboBoxItem Content="50"/>
+                            <ComboBoxItem Content="55"/>
+                            <ComboBoxItem Content="60"/>
+                        </ComboBox>
+                        <Label Content="Bank Name" HorizontalAlignment="Left" Height="25" Margin="288.334,55,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBlock Name="BankNameu" Text=" Enter Bank Name"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="292.334,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBox Name="banknameu" Background="Transparent" Text="{Binding Path=NannyBankName, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="292.334,77,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" Grid.Column="5" />
+                        <Label Content="Bank Number" HorizontalAlignment="Left" Height="25" Margin="288.334,91,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBlock Name="BankNumberu" Text=" Enter Bank Number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="292.334,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBox Name="banknumberu" Background="Transparent" Text="{Binding Path=NannyAccountNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="292.334,112,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" Grid.Column="5" />
+                        <Label Content="Bank Branchu" HorizontalAlignment="Left" Height="25" Margin="288.334,126,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBlock Name="BankBranchu" Text=" Enter Bank Branch"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="292.334,146,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBox Name="bankbranchu" Background="Transparent" Text="{Binding Path=NannyBranchNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="292.334,148,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" Grid.Column="5" />
+                        <Label Content="Account Number" HorizontalAlignment="Left" Height="25" Margin="288.334,160,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBlock Name="AccountNumberu" Text=" Enter Account Number"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="20" Margin="292.334,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBox Name="accountnumberu" Background="Transparent" Text="{Binding Path=NannyAccountNumber, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="292.334,182,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="123" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" Grid.Column="5" />
+                        <Label Content="Renarks" HorizontalAlignment="Left" Height="25" Margin="292.334,232,0,0" VerticalAlignment="Top" Width="123" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBlock Name="Recommendationsu" Text=" Enter Nanny Renarks"  Foreground="Gray" Background="White" HorizontalAlignment="Left" Height="91" Margin="292.334,259,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" Grid.ColumnSpan="2" Grid.Column="5"/>
+                        <TextBox Name="recommendationsu" Background="Transparent" Text="{Binding Path=NannyRemarkes, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="93" Margin="292.334,257,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="136" GotFocus="Name_GotFocus" LostFocus="Name_LostFocus" Grid.ColumnSpan="2" Grid.Column="5" />
+                    </Grid>
+                </TabItem>
+                <TabItem Header="Delete" Background="Pink" Margin="198,0,-308,-24" FontWeight="Bold">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="33*"/>
+                            <ColumnDefinition Width="263*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Content="ID" HorizontalAlignment="Left" Height="32" Margin="28,66,0,0" VerticalAlignment="Top" Width="93" Grid.ColumnSpan="2"/>
+                        <Button Name="Delete" Content="Delete" HorizontalAlignment="Left" Margin="329.667,421,0,0" VerticalAlignment="Top" Width="165" FontFamily="Georgia" Background="Pink" Foreground="Black" FontSize="16" Height="62" Click="Delete_Click" Grid.Column="1"/>
+                        <TextBlock Name="deleteID" Text=" Enter ID" Foreground="Gray" Background="White" HorizontalAlignment="Left" Margin="28,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" Height="20" Width="155"/>
+                        <TextBox Background="Transparent" Text="{Binding Path=NannyId, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" Margin="28,98,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" Grid.ColumnSpan="2"/>
+                    </Grid>
+                </TabItem>
+                <ComboBox Height="100" Width="120" Background="Black" />
+                <TextBox x:Name="nannyid_Copy" Background="Transparent" Text="{Binding MaxSalaryRate, Mode=TwoWay, NotifyOnValidationError=true, ValidatesOnExceptions=true}" HorizontalAlignment="Left" Height="20" TextWrapping="Wrap" VerticalAlignment="Top" Width="206" LostFocus="Max_LostFocus" GotFocus="Max_GotFocus" />
+                <Label Content="Label" Height="100" Width="100"/>
+                <ListBox Height="100" Width="100"/>
+            </TabControl.Items>
+        </TabControl>
+        <TextBlock HorizontalAlignment="Left" Margin="235,58,0,0" TextWrapping="Wrap" Text="NANNY" FontFamily="Georgia"  VerticalAlignment="Top" Height="33" Width="113" FontSize="30" Foreground="#FF5D5F62" FontStyle="Normal"/>
+    </Grid>
+</UserControl>

@@ -8,15 +8,20 @@ namespace BE
 {
     public class Child
     {
+        public string ChildFirestName { get; set; }
+        public string ChildLastName { get; set; }
         public int ChildId { get; set; }
         public int ChildNannyId { get; set; }
         public int ChildMotherId { get; set; }
-        public string ChildFirestName { get; set; }
         public DateTime ChildBirthDate { get; set; }
         public bool ChildHasSpecialNeeds { get; set; }
         public string ChildSpecialNeeds { get; set; }
-        
-        
+        /// <summary>
+        /// ////////////////
+        /// </summary>
+        //constructor
+        Child() { ChildNannyId = 0; }
+
         //ToString
         public override string ToString()
         {
